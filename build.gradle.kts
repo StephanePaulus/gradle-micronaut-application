@@ -59,6 +59,9 @@ spotless {
 }
 
 jib {
+    from{
+        image="stephanepaulus/base-java17:main"
+    }
     to{
         image="stephanepaulus/micronaut-application"
     }
