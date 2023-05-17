@@ -4,7 +4,7 @@ plugins {
     id("org.sonarqube") version "4.0.0.2929"
     id("com.diffplug.spotless") version "6.18.0"
     id("io.freefair.lombok") version "8.0.1"
-    //id("com.google.cloud.tools.jib") version "3.3.2"
+    id("com.google.cloud.tools.jib") version "3.3.2"
 }
 
 version = "0.1"
@@ -58,8 +58,8 @@ spotless {
     }
 }
 
-//jib {
-//    to{
-//        image="stephanepaulus/micronaut-application"
-//    }
-//}
+jib {
+    to{
+        image="stephanepaulus/micronaut-application"
+    }
+}
