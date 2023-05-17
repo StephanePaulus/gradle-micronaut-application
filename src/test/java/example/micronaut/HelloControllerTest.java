@@ -26,4 +26,13 @@ public class HelloControllerTest {
         assertNotNull(body);
         assertEquals("Hello world", body);
     }
+
+    @Test
+    public void testTest() {
+        HttpRequest<String> request = HttpRequest.GET("/test");  // <3>
+        String body = client.toBlocking().retrieve(request);
+
+        assertNotNull(body);
+        assertEquals("Test", body);
+    }
 }
