@@ -1,5 +1,6 @@
 plugins {
     id("io.micronaut.minimal.application") version "3.7.9"
+    id("jacoco")
 }
 
 version = "0.1"
@@ -28,4 +29,10 @@ dependencies {
     implementation("jakarta.annotation:jakarta.annotation-api")
 
     runtimeOnly("ch.qos.logback:logback-classic")
+}
+
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(true)
+    }
 }
