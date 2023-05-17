@@ -1,6 +1,7 @@
 plugins {
     id("io.micronaut.minimal.application") version "3.7.9"
     id("jacoco")
+    id("org.sonarqube") version "4.0.0.2929"
 }
 
 version = "0.1"
@@ -34,5 +35,13 @@ dependencies {
 tasks.jacocoTestReport {
     reports {
         xml.required.set(true)
+    }
+}
+
+sonarqube {
+    properties {
+        property("sonar.projectKey", "StephanePaulus_gradle-micronaut-application")
+        property("sonar.organization", "stephanepaulus")
+        property("sonar.host.url", "https://sonarcloud.io")
     }
 }
