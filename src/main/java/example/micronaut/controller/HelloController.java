@@ -10,4 +10,9 @@ public class HelloController {
     public String hello(){
         return "Hello world";
     }
+
+    @Get("/test")
+    public String test(){
+        return "Test";
+    }
 }
