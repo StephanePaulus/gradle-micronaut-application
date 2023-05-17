@@ -1,0 +1,7 @@
+micronaut:
+  application:
+    name: gradle-micronaut-application
+netty:
+  default:
+    allocator:
+      max-order: 3
