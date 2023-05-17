@@ -2,6 +2,9 @@ plugins {
     id("io.micronaut.minimal.application") version "3.7.9"
     id("jacoco")
     id("org.sonarqube") version "4.0.0.2929"
+    id("com.diffplug.spotless") version "6.18.0"
+    id("io.freefair.lombok") version "8.0.1"
+    id("com.google.cloud.tools.jib") version "3.3.2"
 }
 
 version = "0.1"
@@ -46,5 +49,17 @@ sonarqube {
         property("sonar.projectKey", "StephanePaulus_gradle-micronaut-application")
         property("sonar.organization", "stephanepaulus")
         property("sonar.host.url", "https://sonarcloud.io")
+    }
+}
+
+spotless {
+    java{
+        googleJavaFormat()
+    }
+}
+
+jib {
+    to{
+        image="stephanepaulus/micronaut-application"
     }
 }
